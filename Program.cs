@@ -5,22 +5,23 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Lista para armazenar os itens
-        List<string> itens = new List<string>();
+        int saldoDisponivel;
 
-        // TODO: Solicite os itens ao usuário
-        for (int i = 0; i < 3; i++)
+        int saldoTotal = int.Parse(Console.ReadLine());
+        
+
+        int valorSaque = int.Parse(Console.ReadLine());
+        
+        saldoDisponivel = saldoTotal;
+        if (saldoDisponivel >= valorSaque)
         {
-            itens.Add(Console.ReadLine());
+            saldoDisponivel = saldoDisponivel - valorSaque;
+            Console.WriteLine($"Saque realizado com sucesso. Novo saldo: {saldoDisponivel}");
+        } 
+        else
+        {
+            Console.WriteLine("Saldo insuficiente. Saque nao realizado!");
         }
 
-        // Exibe a lista de itens
-        Console.WriteLine("Lista de itens:");
-        foreach (string item in itens)
-        {
-            Console.WriteLine($"- {item}");
-        }
     }
 }
-
-
